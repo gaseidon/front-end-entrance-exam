@@ -476,8 +476,14 @@ ul {
 }
 
 /* Адаптация для маленьких экранов */
-@media (max-width: 360px) {
-  
+@media (max-width: 450px) {
+  .item_tools img {
+    width: 10px;
+}
+  .container {
+    width: 100mm;
+    gap: 0;
+  }
   .tools_wrapper {
     justify-content: flex-start;
   }
