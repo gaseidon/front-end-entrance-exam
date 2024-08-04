@@ -16,7 +16,7 @@ document.querySelectorAll("button").forEach((button) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const inputs = document.querySelectorAll(".percentageInput");
+  const inputs = document.querySelectorAll(".percentage-input");
 
   inputs.forEach((input) => {
     // Function to update the input background based on value
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to save content to localStorage
 function saveContentToLocalStorage() {
   const elements = document.querySelectorAll(
-    '[contenteditable="true"], .percentageInput, .education_item, .element_experience'
+    '[contenteditable="true"], .percentage-input, .education_item, .element_experience'
   );
   elements.forEach((element) => {
     const key = element.getAttribute("data-key");
@@ -137,7 +137,7 @@ function loadContentFromLocalStorage() {
 document.addEventListener("DOMContentLoaded", () => {
   loadContentFromLocalStorage();
   const elements = document.querySelectorAll(
-    '[contenteditable="true"], .percentageInput, .education_item, .element_experience'
+    '[contenteditable="true"], .percentage-input, .education_item, .element_experience'
   );
   elements.forEach((element) => {
     if (element.classList.contains("education_item")) {
