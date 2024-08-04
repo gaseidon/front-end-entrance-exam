@@ -1,96 +1,485 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Импорт шрифта */
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Стили для body */
 body {
-  margin: 0;
+  font-family: "Poppins", sans-serif;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f4f4f9;
+  font-size: 10px;
+  line-height: 1.3;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Стили для заголовков и абзацев */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Классы для отступов */
+.p-10 {
+  padding: 10px 15px !important;
+}
+.space-between {
+  justify-content: space-between !important;
+  /* gap:0px !important; */
+  /* padding: 15px 1px !important; */
+}
+/* Обёртки для ограничения высоты */
+.wrapper-200 {
+  max-height: 150px !important;
+}
+
+.wrapper-400 {
+  max-height: 400px !important;
+}
+
+/* Основной контейнер */
+.container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 205mm;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Стили для строк и колонок */
+.row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.col {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.col-white {
+  background-color: white;
+}
+
+.col-no-padding {
+  padding: 0;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  width: 25%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-75 {
+  width: 75%;
+}
+
+/* Стили для вложенных элементов */
+.for-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+/* Контейнеры для ввода */
+.input-container {
+  width: 300px;
+  margin: 10px 0;
+  flex: 2;
+}
+
+/* Стили для процентов */
+.percentageInput {
+  width: 100%;
+  height: 12px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #28d979, #28d979) no-repeat;
+  color: #333;
+  font-size: 16px;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.percentageInput1 {
+  background-size: 80% 100%;
+}
+
+.percentageInput2 {
+  background-size: 60% 100%;
+}
+
+.percentageInput3 {
+  background-size: 40% 100%;
+}
+
+.percentageInput.blur::placeholder {
+  color: transparent;
+}
+
+/* Стили для списков */
+ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Стили для групп и элементов */
+.language_group {
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.language_group p {
+  flex: 1;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.education_group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.education_item {
+  flex: 1 1 calc(50% - 15px);
+  max-width: calc(50% - 15px);
+}
+
+.heart {
+  width: 20px;
+}
+
+.group_mini {
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.active_education {
+  background-color: #28d979;
+  fill: #ffd700;
+  color: white;
+}
+
+.number,
+.mail {
+  font-size: 14px;
+}
+
+.education_name {
+  padding-top: 15px;
+}
+
+.education_item span {
+  color: #149063;
+}
+
+.education_item .heart {
+  display: none;
+}
+
+.active_education span {
+  color: white;
+}
+
+.active_education .heart {
+  display: block !important;
+}
+
+.interests {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.element_interests {
+  border-radius: 25px;
+}
+
+.contacts {
+  background-color: black;
+  color: white;
+}
+
+.name-contact {
+  font-size: 18px;
+}
+
+.array_info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 20px;
+  color: #acacac;
+}
+
+.tools {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.block_tools {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.name_tools {
   text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 25px;
+  font-size: 7px;
+  position: absolute;
+  top: -5px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.item_tools {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 10px;
+  align-items: center;
+  gap: 10px;
 }
 
-.card {
-  padding: 2em;
+.experience {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.element_experience {
+  padding: 10px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.info_experience {
+  display: flex;
+  gap: 50px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.most_recent {
+  display: none;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.most_recent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(126, 115, 18, 0.4);
+  pointer-events: none;
+  width: 100%;
+}
+
+.cart_active {
+  background-color: #28d979;
+  color: white;
+}
+
+.cart_active .most_recent {
+  display: block;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name_and_profession {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.profession {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5c5c5c;
+}
+
+.welcome {
+  font-size: 11px;
+}
+
+.education_professional,
+.education_year {
+  font-size: 13px;
+}
+
+.photo {
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img {
+  width: 170px;
+}
+
+/* Стили для ripple-эффекта */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.ripple.active::after {
+  transform: translate(-50%, -50%) scale(10);
+  opacity: 0;
+}
+
+/* Стили для элементов с атрибутом data-key */
+[data-key]:hover {
+  outline: 1px solid #00f;
+  background-color: rgba(0, 0, 255, 0.1);
+  transition: background-color 0.1s, outline 0.1s;
+}
+
+[data-key]:focus {
+  padding: 1px;
+}
+
+/* Общие настройки для адаптивности */
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+/* Адаптация для планшетов и малых экранов */
+@media (max-width: 768px) {
+  .container {
+    width: 120mm;
+    gap: 0;
   }
-  button {
-    background-color: #f9f9f9;
+  .item_tools img {
+    width: 15px;
+  }
+  .p-10 {
+    padding: 0 !important;
+  }
+
+  .row {
+    gap: 10px;
+  }
+
+  body {
+    font-size: 8px;
+  }
+
+  .for-col {
+    gap: 0;
+  }
+
+  .col {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .photo {
+    width: 33%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .photo img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  .interests span {
+    margin: 5px;
+  }
+
+  .name_tools {
+    position: static;
+  }
+
+  .tools {
+    gap: 0;
   }
 }
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 360px) {
+  
+  .tools_wrapper {
+    justify-content: flex-start;
+  }
+}
+
+/* Стили для фото */

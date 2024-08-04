@@ -1,13 +1,288 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <button id="download-pdf" class="download-button">Download as PDF</button>
+  </div>
+  <div class="container">
+    <div class="row wrapper-200">
+      <div class="photo col col-25 for-col col-no-pagging">
+        <img class="avatar-profile" src="image.jpg" alt="">
+      </div>
+      <div class="col col-25 for-col">
+        <div class="welcome" contenteditable="true" data-key="hello">Hello 👋🏻 I’m</div>
+        <div class="name_and_profession">
+          <div class="name" contenteditable="true" spellcheck="false" data-key="name">Graham Hunt</div>
+          <div class="profession" contenteditable="true" spellcheck="false" data-key="profession">Brand/Logo Designer
+          </div>
+        </div>
+      </div>
+      <div class="col col-50 for-col">
+        <h2 class="name_languages" contenteditable="true" data-key="lang">Languages</h2>
+        <ul>
+          <li class="language_group">
+            <p contenteditable="true" spellcheck="false" data-key="language1">English</p>
+            <div class="input-container">
+              <input type="text" class="percentageInput percentageInput1" data-key="language1_percentage">
+            </div>
+          </li>
+          <li class="language_group">
+            <p contenteditable="true" spellcheck="false" data-key="language2">Spanish</p>
+            <div class="input-container">
+              <input type="text" class="percentageInput percentageInput2" data-key="language2_percentage">
+            </div>
+          </li>
+          <li class="language_group">
+            <p contenteditable="true" spellcheck="false" data-key="language3">French</p>
+            <div class="input-container">
+              <input type="text" class="percentageInput percentageInput3" data-key="language3_percentage">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row wrapper-400">
+      <div class="education col col-50 for-col">
+        <h2 contenteditable="true" data-key="educ">Education</h2>
+        <div class="education_group row">
+          <div class="education_item col col-white active_education" data-key="education_item1">
+            <div class="group_mini">
+              <div class="education_year" contenteditable="true" data-key="education1_year">2222</div>
+              <div class="heart">
+                <svg width="20" height="20" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    fill="#F6ED1E" />
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="education_professional" contenteditable="true" data-key="education1_professional">UX/UI</div>
+            <div class="education_tags" contenteditable="true" data-key="education1_tags"><span>#UX</span>
+              <span>#UI</span> <span>#research</span>
+              <span>#DesignSytem</span>
+            </div>
+            <div class="education_name" contenteditable="true" data-key="education1_name">Cali Institute of the Arts
+            </div>
+          </div>
+          <div class="education_item col col-white" data-key="education_item2">
+            <div class="group_mini">
+              <div class="education_year" contenteditable="true" data-key="education2_year">2222</div>
+              <!-- <div class="heart"> -->
+              <div class="heart">
+                <svg width="20" height="20" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    fill="#F6ED1E" />
+                </svg>
+
+              </div>
+            </div>
+            <div class="education_professional" contenteditable="true" data-key="education2_professional">Product
+              designer</div>
+            <div class="education_tags" contenteditable="true" data-key="education2_tags"><span>#UX</span>
+              <span>#UI</span> <span>#research</span>
+              <span>#DesignSytem</span>
+            </div>
+            <div class="education_name" contenteditable="true" data-key="education2_name">Coursera</div>
+          </div>
+          <div class="education_item col col-white" data-key="education_item3">
+            <div class="group_mini">
+              <div class="education_year" contenteditable="true" data-key="education3_year">2222</div>
+              <!-- <div class="heart"> -->
+              <div class="heart">
+                <svg width="20" height="20" viewBox="0 0 11 11" fill="red" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2.75 0.807373C1.99375 0.807373 1.32 1.12388 0.81125 1.61929C0.31625 2.1147 0 2.78901 0 3.55965C0 4.31653 0.31625 4.99083 0.81125 5.5L5.5 10.1926L10.1887 5.5C10.6838 5.0046 11 4.33029 11 3.55965C11 2.80277 10.6838 2.12847 10.1887 1.61929C9.69375 1.12388 9.02 0.807373 8.25 0.807373C7.49375 0.807373 6.82 1.12388 6.31125 1.61929C5.81625 2.1147 5.5 2.78901 5.5 3.55965C5.5 2.80277 5.18375 2.12847 4.68875 1.61929C4.19375 1.12388 3.52 0.807373 2.75 0.807373Z"
+                    fill="#F6ED1E" />
+                </svg>
+
+              </div>
+            </div>
+            <div class="education_professional" contenteditable="true" data-key="education3_professional">Graphic design
+            </div>
+            <div class="education_tags" contenteditable="true" data-key="education3_tags"><span>#UX</span>
+              <span>#UI</span> <span>#research</span>
+              <span>#DesignSytem</span>
+            </div>
+            <div class="education_name" contenteditable="true" data-key="education3_name">Neoland</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-50 for-col group-col">
+        <div class="col for-col">
+          <h2 contenteditable="true" data-key="inter">Interests</h2>
+          <div class="interests">
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests1">
+              branding
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests2">
+              brand identity
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests3">
+              logo
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests4">
+              typography
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests5">
+              photography
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests6">
+              designing
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests7">
+              poster design
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests8">
+              research
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests9">
+              social networks
+            </span>
+            <span class="p-10 col-white element_interests" contenteditable="true" data-key="intrests10">
+              illustration
+            </span>
+          </div>
+        </div>
+        <div class="col contacts">
+          <div class="name-contact" contenteditable="true" data-key="name-contact">Let´s chat! I´m ready to work on
+            excinting projects</div>
+          <div class="array_info">
+            <div class="mail" contenteditable="true" data-key="mail-contact">ivann19bj@gmail.com</div> |
+            <div class="number" contenteditable="true" data-key="number-contact">+34 666 666 666</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row wrapper-400">
+      <div class="col col-25 for-col tools_wrapper">
+        <h2 contenteditable="true" data-key="tools">Tools</h2>
+        <div class="tools">
+          <div class="block_tools">
+            <div class="name_tools" contenteditable="true" data-key="name_tools1">design</div>
+            <div class="col col-white item_tools">
+              <img src="img/logoFigma.png" alt="">
+              <img src="img/logoCreativeCloud.png" alt="">
+              <img src="img/logoMiro1.png" alt="">
+              <img src="img/logoNotion.png" alt="">
+              <img src="img/logoMeet.png" alt="">
+              <img src="img/logoanalytics.png" alt="">
+            </div>
+          </div>
+          <div class="block_tools">
+            <div class="name_tools" contenteditable="true" data-key="name_tools2">no-code</div>
+            <div class="col col-white item_tools">
+              <img src="img/logoZapìer1.png" alt="">
+              <img src="img/logoWebflow.png" alt="">
+              <img src="img/logoFramer.png" alt="">
+              <img src="img/logoWordpress.png" alt="">
+            </div>
+          </div>
+          <div class="block_tools">
+            <div class="name_tools" contenteditable="true" data-key="name_tools3">artoficial intelligence</div>
+            <div class="col col-white item_tools space-between">
+              <img src="img/logoChatGPT1.png" alt="">
+              <img src="img/logoCopilot1.png" alt="">
+              <img src="img/logoMidjourney1.png" alt="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-75 for-col">
+        <h2 contenteditable="true" data-key="exper">Experience</h2>
+        <div class="experience">
+          <div class="col col-white element_experience cart_active" data-key="element_experience1">
+            <div class="group_mini">
+              <div class="data" contenteditable="true" data-key="data1">Jul. 2023 - Ago. 2023</div>
+              <div class="most_recent" contenteditable="true" data-key="most_recent1">most recent</div>
+            </div>
+            <div class="info_experience">
+              <div class="prof">
+                <div class="prof_experience" contenteditable="true" data-key="prof_experience1">
+                  Senior Graphic Designer
+                </div>
+                <div class="mini_info" contenteditable="true" data-key="mini_info1">
+                  Pinnacle | Full-time
+                </div>
+              </div>
+              <div class="punct">
+                <ul>
+                  <li contenteditable="true" data-key="punct11">Research and brainstorm various design ideas for content
+                    and marketing.</li>
+                  <li contenteditable="true" data-key="punct12">Review the work submitted by Junior Designers and
+                    sharing feedback</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col col-white element_experience" data-key="element_experience2">
+            <div class="group_mini">
+              <div class="data" contenteditable="true" data-key="data2">Jul. 2023 - Ago. 2023</div>
+              <div class="most_recent" contenteditable="true" data-key="most_recent2">most recent</div>
+            </div>
+            <div class="info_experience">
+              <div class="prof">
+                <div class="prof_experience" contenteditable="true" data-key="prof_experience2">
+                  Senior Graphic Designer
+                </div>
+                <div class="mini_info" contenteditable="true" data-key="mini_info2">
+                  Pinnacle | Full-time
+                </div>
+              </div>
+              <div class="punct">
+                <ul>
+                  <li contenteditable="true" data-key="punct21">Development of internal projects from scratch, product
+                    design of brands.</li>
+                  <li contenteditable="true" data-key="punct22">Landing page, webapps and hybrid apps</li>
+                  <li contenteditable="true" data-key="punct23">
+                    Taking decisions with stakeholders for the future of products such as Beagle labs, myur...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col col-white element_experience" data-key="element_experience3">
+            <div class="group_mini">
+              <div class="data" contenteditable="true" data-key="data3">Jul. 2023 - Ago. 2023</div>
+              <div class="most_recent" contenteditable="true" data-key="most_recent3">most recent</div>
+            </div>
+            <div class="info_experience">
+              <div class="prof">
+                <div class="prof_experience" contenteditable="true" data-key="prof_experience3">
+                  Senior Graphic Designer
+                </div>
+                <div class="mini_info" contenteditable="true" data-key="mini_info3">
+                  Pinnacle | Full-time
+                </div>
+              </div>
+              <div class="punct">
+                <ul>
+                  <li contenteditable="true" data-key="punct31">Visual design for Events, Brands and Products.</li>
+                  <li contenteditable="true" data-key="punct32">Product design, Packaging Design</li>
+                  <li contenteditable="true" data-key="punct33">Logo Design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
 </html>
