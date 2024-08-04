@@ -158,8 +158,8 @@ ul {
 }
 
 .language-group p {
-  flex: 1;
-  margin: 0;
+  flex: 0 20%;
+  margin: 10px;
   font-size: 12px;
   font-weight: bold;
 }
