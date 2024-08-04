@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to save content to localStorage
 function saveContentToLocalStorage() {
   const elements = document.querySelectorAll(
-    '[contenteditable="true"], .percentage-input, .education_item, .element_experience'
+    '[contenteditable="true"], .percentage-input, .education-item, .element-experience'
   );
   elements.forEach((element) => {
     const key = element.getAttribute("data-key");
@@ -69,13 +69,13 @@ function saveContentToLocalStorage() {
       localStorage.setItem(key, element.value);
     } else {
       if (
-        element.classList.contains("education_item") ||
-        element.classList.contains("element_experience")
+        element.classList.contains("education-item") ||
+        element.classList.contains("element-experience")
       ) {
         localStorage.setItem(
           key,
-          element.classList.contains("active_education") ||
-            element.classList.contains("cart_active")
+          element.classList.contains("active-education") ||
+            element.classList.contains("cart-active")
         );
       } else {
         localStorage.setItem(key, element.innerText);
@@ -99,21 +99,21 @@ function loadContentFromLocalStorage() {
         element.style.backgroundSize = `${element.value}% 100%`;
       } else {
         if (
-          element.classList.contains("education_item") ||
-          element.classList.contains("element_experience")
+          element.classList.contains("education-item") ||
+          element.classList.contains("element-experience")
         ) {
           if (value === "true") {
-            if (element.classList.contains("education_item")) {
-              element.classList.add("active_education");
+            if (element.classList.contains("education-item")) {
+              element.classList.add("active-education");
               activeEducationExists = true;
-            } else if (element.classList.contains("element_experience")) {
-              element.classList.add("cart_active");
+            } else if (element.classList.contains("element-experience")) {
+              element.classList.add("cart-active");
             }
           } else {
-            if (element.classList.contains("education_item")) {
-              element.classList.remove("active_education");
-            } else if (element.classList.contains("element_experience")) {
-              element.classList.remove("cart_active");
+            if (element.classList.contains("education-item")) {
+              element.classList.remove("active-education");
+            } else if (element.classList.contains("element-experience")) {
+              element.classList.remove("cart-active");
             }
           }
         } else {
@@ -123,13 +123,13 @@ function loadContentFromLocalStorage() {
     }
   }
 
-  const educationItem1 = document.querySelector('[data-key="education_item1"]');
+  const educationItem1 = document.querySelector('[data-key="education-item1"]');
   if (
     educationItem1 &&
     activeEducationExists &&
-    localStorage.getItem("education_item1") === true
+    localStorage.getItem("education-item1") === true
   ) {
-    educationItem1.classList.remove("active_education");
+    educationItem1.classList.remove("active-education");
   }
 }
 
@@ -137,25 +137,25 @@ function loadContentFromLocalStorage() {
 document.addEventListener("DOMContentLoaded", () => {
   loadContentFromLocalStorage();
   const elements = document.querySelectorAll(
-    '[contenteditable="true"], .percentage-input, .education_item, .element_experience'
+    '[contenteditable="true"], .percentage-input, .education-item, .element-experience'
   );
   elements.forEach((element) => {
-    if (element.classList.contains("education_item")) {
+    if (element.classList.contains("education-item")) {
       element.addEventListener("click", () => {
-        document.querySelectorAll(".education_item").forEach((item) => {
-          item.classList.remove("active_education");
+        document.querySelectorAll(".education-item").forEach((item) => {
+          item.classList.remove("active-education");
         });
-        element.classList.add("active_education");
+        element.classList.add("active-education");
         saveContentToLocalStorage();
       });
     }
 
-    if (element.classList.contains("element_experience")) {
+    if (element.classList.contains("element-experience")) {
       element.addEventListener("click", () => {
-        document.querySelectorAll(".element_experience").forEach((item) => {
-          item.classList.remove("cart_active");
+        document.querySelectorAll(".element-experience").forEach((item) => {
+          item.classList.remove("cart-active");
         });
-        element.classList.add("cart_active");
+        element.classList.add("cart-active");
         saveContentToLocalStorage();
       });
     }
@@ -178,25 +178,25 @@ document.getElementById("download-pdf").addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  const experienceElements = document.querySelectorAll(".element_experience");
+  const experienceElements = document.querySelectorAll(".element-experience");
 
   experienceElements.forEach((element) => {
     element.addEventListener("click", () => {
-      experienceElements.forEach((el) => el.classList.remove("cart_active"));
-      element.classList.add("cart_active");
+      experienceElements.forEach((el) => el.classList.remove("cart-active"));
+      element.classList.add("cart-active");
     });
   });
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  const experienceElements = document.querySelectorAll(".education_item");
+  const experienceElements = document.querySelectorAll(".education-item");
 
   experienceElements.forEach((element) => {
     element.addEventListener("click", () => {
       experienceElements.forEach((el) =>
-        el.classList.remove("active_education")
+        el.classList.remove("active-education")
       );
-      element.classList.add("active_education");
+      element.classList.add("active-education");
     });
   });
 });
